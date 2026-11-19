@@ -1,0 +1,6 @@
+config.json
+tiktok_token.json
+__pycache__/
+*.pyc
+saida/
+demo_*/
