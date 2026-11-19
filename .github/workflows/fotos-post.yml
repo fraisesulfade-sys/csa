@@ -5,11 +5,14 @@ on:
       post: {description: "ex.: post-01", default: "post-01"}
   push:
     paths: ["scripts/baixar_fotos_post.py", ".github/workflows/fotos-post.yml"]
+permissions:
+  contents: write
 jobs:
   fotos:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/baixar_fotos_post.py ${{ github.event.inputs.post || 'post-01' }}
-      - uses: actions/upload-artifact@v4
-        with: {name: fotos, path: saida/, retention-days: 3}
+      - run: |
+          cd saida && git init -q -b tmp-fotos && git add . && git -c user.name=gha -c user.email=gha@x commit -qm fotos
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" tmp-fotos
