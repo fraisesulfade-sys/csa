@@ -1,0 +1,13 @@
+name: Inspecionar feed Shopee
+on:
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/inspecionar-feed.yml", "scripts/inspecionar_feed.py"]
+jobs:
+  inspecionar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/inspecionar_feed.py
+        env:
+          SHOPEE_FEED_URL: ${{ secrets.SHOPEE_FEED_URL }}
