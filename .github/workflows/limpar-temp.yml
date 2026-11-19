@@ -1,0 +1,11 @@
+name: Limpar branch temporária
+on:
+  push:
+    paths: [".github/workflows/limpar-temp.yml", "dados/limpar.txt"]
+permissions:
+  contents: write
+jobs:
+  limpar:
+    runs-on: ubuntu-latest
+    steps:
+      - run: git push --delete "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" tmp-fotos || true

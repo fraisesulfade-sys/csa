@@ -4,7 +4,7 @@ on:
     inputs:
       post: {description: "ex.: post-01", default: "post-01"}
   push:
-    paths: ["scripts/baixar_fotos_post.py", ".github/workflows/fotos-post.yml"]
+    paths: ["dados/pedido-fotos.txt"]
 permissions:
   contents: write
 jobs:
