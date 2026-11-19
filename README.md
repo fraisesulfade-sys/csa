@@ -1,4 +1,4 @@
-# csa — Achados de casa (Shopee → TikTok)
+# csa — cafuné decor ★ (Shopee → TikTok)
 
 Automação que busca produtos de casa e cozinha na Shopee (programa de afiliados),
 gera posts em carrossel no estilo "achadinhos" e envia para os rascunhos do TikTok.
