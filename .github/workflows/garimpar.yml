@@ -1,0 +1,19 @@
+name: Garimpar produtos
+on:
+  workflow_dispatch:
+  push:
+    paths: ["scripts/garimpar_feed.py", ".github/workflows/garimpar.yml"]
+permissions:
+  contents: write
+jobs:
+  garimpar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pillow
+      - run: python3 scripts/garimpar_feed.py
+        env:
+          SHOPEE_FEED_URL: ${{ secrets.SHOPEE_FEED_URL }}
+      - run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add dados && git commit -m "Candidatos do feed" && git push || echo "sem mudanças"
