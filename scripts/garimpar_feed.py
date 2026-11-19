@@ -8,14 +8,14 @@ def norm(s): return unicodedata.normalize("NFKD", s.lower()).encode("ascii", "ig
 BONS = {  # peso estético
  "rattan":3,"palha":3,"bambu":2,"madeira":2,"macica":2,"ceramica":3,"terracota":3,"canelad":3,"vidro":1,
  "linho":2,"algodao":1,"boho":2,"retro":2,"vintage":2,"cogumelo":3,"bauhaus":3,"xadrez":2,"organic":3,
- "abajur":3,"luminaria":2,"vaso":2,"bandeja":2,"cesto":2,"castical":3,"porta vela":2,"espelho":2,
+ "abajur":3,"luminaria":2,"bandeja":2,"cesto":2,"castical":3,"porta vela":2,"espelho":2,
  "tapete":1,"manta":2,"almofada":1,"jogo americano":2,"taca":2,"copo":1,"fruteira":2,"aparador":3,
  "cabeceira":2,"banqueta":2,"poltrona":2,"puff":1,"mesa lateral":2,"carrinho":2,"prateleira":1,
  "porcelana":2,"artesanal":2,"crochet":1,"croche":1,"tricot":1,"veludo":1,"boucle":3,"marmore":2,
  "dourado":1,"latao":2,"minimalista":1,"escandinav":2,"nordico":2,"decorativ":1,"azulejo":2,"fruta":1,
  "bowl":1,"tigela":1,"travessa":2,"bule":2,"chaleira":1,"pano de prato":1,"guardanapo":1,"sousplat":3,
 }
-RUINS = ["plastico","pvc","adesivo","tinta","ferramenta","parafus","mangueira","rodo","vassoura","lixeira pedal",
+RUINS = ["flor","flores","floral","vaso de vidro","vaso para","arranjo","planta artificial","plastico","pvc","adesivo","tinta","ferramenta","parafus","mangueira","rodo","vassoura","lixeira pedal",
  "silicone","kit limpeza","escova","refil","cabo usb","led rgb","pilha","fita","capa protetora","organizador de cabos",
  "infantil","bebe","pet","cachorro","gato","carro","moto","chuveiro","torneira","ralo","vaso sanitario","desentup"]
 
