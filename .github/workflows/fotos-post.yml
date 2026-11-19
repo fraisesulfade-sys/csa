@@ -1,0 +1,15 @@
+name: Fotos do post
+on:
+  workflow_dispatch:
+    inputs:
+      post: {description: "ex.: post-01", default: "post-01"}
+  push:
+    paths: ["scripts/baixar_fotos_post.py", ".github/workflows/fotos-post.yml"]
+jobs:
+  fotos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/baixar_fotos_post.py ${{ github.event.inputs.post || 'post-01' }}
+      - uses: actions/upload-artifact@v4
+        with: {name: fotos, path: saida/, retention-days: 3}
