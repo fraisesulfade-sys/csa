@@ -1,0 +1,120 @@
+{
+ "capa": {
+  "arquivo": "00.jpg",
+  "y": 300,
+  "titulo": [
+   "achadinhos pra deixar",
+   "sua casa com cara",
+   "de pinterest"
+  ]
+ },
+ "produtos": [
+  {
+   "arquivo": "01.jpg",
+   "n": 1,
+   "nome": "poltrona orgânica",
+   "preco": 458.9,
+   "xy": [
+    640,
+    900
+   ]
+  },
+  {
+   "arquivo": "02.jpg",
+   "n": 2,
+   "nome": "espelho orgânico pílula",
+   "preco": 189.91,
+   "xy": [
+    170,
+    420
+   ]
+  },
+  {
+   "arquivo": "03.jpg",
+   "n": 3,
+   "nome": "puff de linho",
+   "preco": 49.99,
+   "xy": [
+    300,
+    930
+   ]
+  },
+  {
+   "arquivo": "04.jpg",
+   "n": 4,
+   "nome": "arandela de palha",
+   "preco": 189.91,
+   "xy": [
+    520,
+    760
+   ]
+  },
+  {
+   "arquivo": "05.jpg",
+   "n": 5,
+   "nome": "manta 100% algodão",
+   "preco": 49.17,
+   "xy": [
+    60,
+    1560
+   ]
+  },
+  {
+   "arquivo": "06.jpg",
+   "n": 6,
+   "nome": "cesto de corda",
+   "preco": 28.9,
+   "a_partir": true,
+   "xy": [
+    560,
+    990
+   ]
+  },
+  {
+   "arquivo": "07.jpg",
+   "n": 7,
+   "nome": "bandeja canelada",
+   "preco": 29.89,
+   "a_partir": true,
+   "xy": [
+    60,
+    1540
+   ]
+  },
+  {
+   "arquivo": "08.jpg",
+   "n": 8,
+   "nome": "bandeja de travertino",
+   "preco": 58.8,
+   "xy": [
+    60,
+    1450
+   ]
+  },
+  {
+   "arquivo": "09.jpg",
+   "n": 9,
+   "nome": "jogo americano redondo",
+   "preco": 49.9,
+   "xy": [
+    600,
+    1520
+   ]
+  },
+  {
+   "arquivo": "10.jpg",
+   "n": 10,
+   "nome": "copos canelados",
+   "preco": 47.99,
+   "xy": [
+    60,
+    1520
+   ]
+  }
+ ],
+ "final": [
+  "links de tudo na bio",
+  "procure pelo número do produto",
+  "cafuné decor"
+ ]
+}
