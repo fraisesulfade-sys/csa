@@ -55,5 +55,9 @@ def postar(base_url, n, arq_legenda):
         st = (s.get("data") or {}).get("status"); print("status:", st, (s.get("data") or {}).get("fail_reason", ""))
         if st in ("SEND_TO_USER_INBOX", "PUBLISH_COMPLETE", "FAILED"): break
 
+def testar():
+    t = post_form(f"{API}/v2/oauth/token/", {"client_key": KEY, "client_secret": SECRET, "grant_type": "client_credentials"})
+    print("CHAVE OK" if "access_token" in t else f"CHAVE ERRADA: {t.get('error')} {t.get('error_description')}")
+
 if __name__ == "__main__":
-    {"trocar": lambda: trocar(sys.argv[2]), "postar": lambda: postar(*sys.argv[2:5])}[sys.argv[1]]()
+    {"testar": testar, "trocar": lambda: trocar(sys.argv[2]), "postar": lambda: postar(*sys.argv[2:5])}[sys.argv[1]]()

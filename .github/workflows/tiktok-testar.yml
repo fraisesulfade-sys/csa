@@ -1,0 +1,13 @@
+name: TikTok testar chave
+on:
+  push:
+    paths: ["dados/testar-tiktok.txt"]
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/tiktok.py testar
+        env:
+          TIKTOK_CLIENT_KEY: ${{ vars.TIKTOK_CLIENT_KEY || 'sbawm8gatzvhiyj9mr' }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
