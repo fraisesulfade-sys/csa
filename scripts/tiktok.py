@@ -57,7 +57,7 @@ def postar(base_url, n, arq_legenda):
 
 def quem():
     tk = token()
-    req = urllib.request.Request(f"{API}/v2/user/info/?fields=display_name,username", headers={"Authorization": f"Bearer {tk}"})
+    req = urllib.request.Request(f"{API}/v2/user/info/?fields=display_name,open_id", headers={"Authorization": f"Bearer {tk}"})
     try: r = json.loads(urllib.request.urlopen(req, timeout=30).read())
     except urllib.error.HTTPError as e: r = json.loads(e.read() or b"{}")
     print("CONTA:", json.dumps(r.get("data", {}).get("user", {}), ensure_ascii=False), r.get("error", {}).get("code"))
