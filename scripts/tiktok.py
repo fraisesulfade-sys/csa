@@ -3,7 +3,7 @@ Token guardado criptografado em dados/tiktok_token.enc (chave = TIKTOK_CLIENT_SE
 Uso: python tiktok.py trocar <codigo> | python tiktok.py postar <pasta_publica_url> <n_fotos> <arquivo_legenda>"""
 import base64, hashlib, json, os, subprocess, sys, time, urllib.parse, urllib.request
 API = "https://open.tiktokapis.com"
-KEY = os.environ["TIKTOK_CLIENT_KEY"]; SECRET = os.environ["TIKTOK_CLIENT_SECRET"]
+KEY = os.environ["TIKTOK_CLIENT_KEY"].strip(); SECRET = os.environ["TIKTOK_CLIENT_SECRET"].strip()
 REDIRECT = "https://fraisesulfade-sys.github.io/csa/conectado.html"
 ARQ = "dados/tiktok_token.enc"
 
