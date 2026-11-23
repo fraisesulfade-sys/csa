@@ -55,9 +55,18 @@ def postar(base_url, n, arq_legenda):
         st = (s.get("data") or {}).get("status"); print("status:", st, (s.get("data") or {}).get("fail_reason", ""))
         if st in ("SEND_TO_USER_INBOX", "PUBLISH_COMPLETE", "FAILED"): break
 
+def quem():
+    tk = token()
+    req = urllib.request.Request(f"{API}/v2/user/info/?fields=display_name,username", headers={"Authorization": f"Bearer {tk}"})
+    try: r = json.loads(urllib.request.urlopen(req, timeout=30).read())
+    except urllib.error.HTTPError as e: r = json.loads(e.read() or b"{}")
+    print("CONTA:", json.dumps(r.get("data", {}).get("user", {}), ensure_ascii=False), r.get("error", {}).get("code"))
+    if len(sys.argv) > 2:
+        s = post_json(f"{API}/v2/post/publish/status/fetch/", tk, {"publish_id": sys.argv[2]}); print("STATUS:", json.dumps(s, ensure_ascii=False))
+
 def testar():
     t = post_form(f"{API}/v2/oauth/token/", {"client_key": KEY, "client_secret": SECRET, "grant_type": "client_credentials"})
     print("CHAVE OK" if "access_token" in t else f"CHAVE ERRADA: {t.get('error')} {t.get('error_description')}")
 
 if __name__ == "__main__":
-    {"testar": testar, "trocar": lambda: trocar(sys.argv[2]), "postar": lambda: postar(*sys.argv[2:5])}[sys.argv[1]]()
+    {"quem": quem, "testar": testar, "trocar": lambda: trocar(sys.argv[2]), "postar": lambda: postar(*sys.argv[2:5])}[sys.argv[1]]()

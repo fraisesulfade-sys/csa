@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/tiktok.py testar
+      - run: python3 scripts/tiktok.py testar && python3 scripts/tiktok.py quem "p_inbox_url~v2.7711492552108869633"
         env:
           TIKTOK_CLIENT_KEY: ${{ vars.TIKTOK_CLIENT_KEY || 'sbawm8gatzvhiyj9mr' }}
           TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
