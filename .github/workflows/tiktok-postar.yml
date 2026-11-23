@@ -1,0 +1,23 @@
+name: TikTok enviar rascunho
+on:
+  push:
+    paths: ["dados/pedido-post.txt"]
+permissions:
+  contents: write
+jobs:
+  postar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Esperar o site publicar as fotos
+        run: sleep 60
+      - run: |
+          read POST N < dados/pedido-post.txt
+          python3 scripts/tiktok.py postar "https://fraisesulfade-sys.github.io/csa/posts/$POST" "$N" "dados/legenda-$POST.txt"
+        env:
+          TIKTOK_CLIENT_KEY: ${{ vars.TIKTOK_CLIENT_KEY || 'sbawm8gatzvhiyj9mr' }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+      - if: always()
+        run: |
+          git config user.name github-actions; git config user.email actions@github.com
+          git add dados/tiktok_token.enc && git commit -m "Token renovado" && git push || true
